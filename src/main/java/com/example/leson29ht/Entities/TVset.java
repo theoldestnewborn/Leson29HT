@@ -4,7 +4,15 @@ import java.io.Serializable;
 
 public class TVset implements Serializable {
     public int id, price;
-    public String brand, model, info;
+    public String brand, model, info, pathImage;
+
+    public String getPathImage() {
+        return pathImage;
+    }
+
+    public void setPathImage(String pathImage) {
+        this.pathImage = pathImage;
+    }
 
     public String getInfo() {
         return info;

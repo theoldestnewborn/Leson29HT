@@ -42,29 +42,37 @@
 <div class="b-divider"></div>
 
 <main class="container">
-    <form action=<c:url value="/addTv"/> method="post">
-        <form class="row g-3">
-            <div class="col-md-2">
-                <label for="inputBrand" class="form-label">Brand</label>
-                <input type="text" name="brand" class="form-control" id="inputBrand">
-            </div>
-            <div class="col-md-2">
-                <label for="inputModel" class="form-label">Model</label>
-                <input type="text" name="model" class="form-control" id="inputModel">
-            </div>
-            <div class="col-12 ">
-                <label for="inputInfo" class="form-label">Description</label>
-                <textarea class="form-control" name="info" id="inputInfo" rows="3"></textarea>
-            </div>
 
-            <div class="col-md-2">
-                <label for="inputPrice" class="form-label">Price</label>
-                <input type="text" name="price" class="form-control" id="inputPrice">
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Add</button>
-            </div>
-        </form>
+    <form class="row g-3" enctype="multipart/form-data" method="post" action=<c:url value="/addTv"/>>
+        <div class="col-md-2">
+            <label for="inputBrand" class="form-label">Brand</label>
+            <input type="text" name="brand" class="form-control" id="inputBrand">
+        </div>
+        <div class="col-md-2">
+            <label for="inputModel" class="form-label">Model</label>
+            <input type="text" name="model" class="form-control" id="inputModel">
+        </div>
+        <div class="col-12 ">
+            <label for="inputInfo" class="form-label">Description</label>
+            <textarea class="form-control" name="info" id="inputInfo" rows="3"></textarea>
+        </div>
+
+        <div class="col-md-2">
+            <label for="inputPrice" class="form-label">Price</label>
+            <input type="text" name="price" class="form-control" id="inputPrice">
+        </div>
+
+
+        <div class="input-group">
+            <input type="file" class="form-control" name="file"
+                   id="inputGroupFile04"
+                   aria-describedby="inputGroupFileAddon04"
+                   aria-label="Upload">
+            <button class="btn btn-outline-secondary"
+                    type="submit"
+                    id="inputGroupFileAddon04">ADD</button>
+        </div>
+
     </form>
 
 </main>
