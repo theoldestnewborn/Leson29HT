@@ -21,7 +21,7 @@
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
+                <li><a href="<c:url value="/products"/>" class="nav-link px-2 text-white">Home</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">About</a></li>
                 <li><a href="<c:url value="/addTv" />" class="nav-link px-2 text-white">Add new model</a></li>
             </ul>
@@ -43,7 +43,7 @@
 
 <main class="container">
 
-    <form class="row g-3" enctype="multipart/form-data" method="post" action=<c:url value="/addTv"/>>
+    <form class="row g-3" action=<c:url value="/addTv"/> enctype="multipart/form-data" method="post" >
         <div class="col-md-2">
             <label for="inputBrand" class="form-label">Brand</label>
             <input type="text" name="brand" class="form-control" id="inputBrand">

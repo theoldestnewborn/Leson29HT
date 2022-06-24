@@ -1,6 +1,6 @@
 package com.example.leson29ht.Servlet;
 
-import com.example.leson29ht.DB.tvDao;
+import com.example.leson29ht.DB.TvDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -19,8 +19,8 @@ import java.util.List;
 
 @WebServlet (name = "addServlet", value = "/addTv")
 @MultipartConfig
-public class addTvServlet extends HttpServlet {
-    private String filePath = "D:\\JAVA\\tasks\\Leson29HT\\src\\main\\webapp\\";
+public class TvServlet extends HttpServlet {
+    private String filePath = "src\\main\\webapp\\";
     static final int FILE_MAX_SIZE = 1000*1024;
     static final int MEM_MAX_SIZE = 1000*1024;
     private File file;
@@ -59,7 +59,7 @@ public class addTvServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        tvDao tv = new tvDao();
+        TvDao tv = new TvDao();
         String brand = req.getParameter("brand");
         String model = req.getParameter("model");
         String info = req.getParameter("info");
@@ -69,18 +69,9 @@ public class addTvServlet extends HttpServlet {
             getServletContext().getRequestDispatcher("/addTv.jsp").forward(req, resp);
         } else {
             tv.addOne(brand, model, info, price);
-            req.setAttribute("tv", new tvDao().getAll());
+            req.setAttribute("tv", new TvDao().getAll());
             getServletContext().getRequestDispatcher("/products.jsp").forward(req, resp);
         }
-
-
-
-
-
-
-
-
-
 
     }
 }

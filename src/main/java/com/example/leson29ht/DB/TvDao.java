@@ -6,9 +6,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class tvDao {
+public class TvDao {
 
-    public tvDao() {
+    public TvDao() {
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {

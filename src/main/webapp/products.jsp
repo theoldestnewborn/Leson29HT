@@ -23,7 +23,7 @@
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
+                <li><a href="<c:url value="/products"/>" class="nav-link px-2 text-white">Home</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">About</a></li>
                 <li><a href="<c:url value="/addTv.jsp"/>" class="nav-link px-2 text-white">Add new model</a></li>
             </ul>
@@ -43,43 +43,89 @@
 <div class="b-divider"></div>
 
 <main class="container">
-    <c:forEach items="${tvs}" begin="0" end="${tvs.size()}" step="2" varStatus="status">
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-5">
-                <div class="card">
-                    <div class="card-body row">
-                        <div class="col-sm-6 col-md-6 img-thumbnail my-1 mx-1">
-                            <img src="1.jpg" alt="tv1" class="img-fluid">
+    <c:forEach items="${tvs}" var="tv" begin="0" end="${tvs.size()}" step="2" varStatus="status">
+
+        <c:if test="${status.count  < tvs.size()}">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-5">
+                    <div class="card">
+                        <div class="card-body row">
+                            <div class="col-sm-6 col-md-6 img-thumbnail my-1 mx-1">
+                                <img src="1.jpg" alt="tv1" class="img-fluid">
+                            </div>
+                            <div class="col-sm-5 col-dm-5 my-1 mx-1">
+                                <h5 class="card-title">${tvs[status.index].brand}</h5>
+                                <h6 class="card-title">${tvs[status.index].model}</h6>
+                                <p class="card-text">${tvs[status.index].brand}</p>
+                                <a href="#" class="btn btn-primary">Order</a>
+                            </div>
                         </div>
-                        <div class="col-sm-5 col-dm-5 my-1 mx-1">
-                            <h5 class="card-title">${tvs[status.index].brand}</h5>
-                            <h6 class="card-title">${tvs[status.index].model}</h6>
-                            <p class="card-text">${tvs[status.index].brand}</p>
-                            <a href="#" class="btn btn-primary">Order</a>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="card">
+                        <div class="card-body row">
+                            <div class="col-sm-6 col-md-6 img-thumbnail my-1 mx-1">
+                                <img src="2.jpg" alt="tv1" class="img-fluid">
+                            </div>
+                            <div class="col-sm-5 col-dm-5 my-1 mx-1">
+                                <h5 class="card-title">${tvs[status.index+1].brand}</h5>
+                                <h6 class="card-title">${tvs[status.index+1].model}</h6>
+                                <p class="card-text">${tvs[status.index+1].info}</p>
+                                <a href="#" class="btn btn-primary">Order</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <c:if test="${status.last}"></c:if>
-            <c:if test="${!status.last}">
-            <div class="col-sm-5">
-                <div class="card">
-                    <div class="card-body row">
-                        <div class="col-sm-6 col-md-6 img-thumbnail my-1 mx-1">
-                            <img src="2.jpg" alt="tv1" class="img-fluid">
-                        </div>
-                        <div class="col-sm-5 col-dm-5 my-1 mx-1">
-                            <h5 class="card-title">${tvs[status.index+1].brand}</h5>
-                            <h6 class="card-title">${tvs[status.index+1].model}</h6>
-                            <p class="card-text">${tvs[status.index+1].info}</p>
-                            <a href="#" class="btn btn-primary">Order</a>
+        </c:if>
+
+        <c:if test="${status.count == tvs.size()}">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-5">
+                    <div class="card">
+                        <div class="card-body row">
+                            <div class="col-sm-6 col-md-6 img-thumbnail my-1 mx-1">
+                                <img src="1.jpg" alt="tv1" class="img-fluid">
+                            </div>
+                            <div class="col-sm-5 col-dm-5 my-1 mx-1">
+                                <h5 class="card-title">${tvs[status.index].brand}</h5>
+                                <h6 class="card-title">${tvs[status.index].model}</h6>
+                                <p class="card-text">${tvs[status.index].brand}</p>
+                                <a href="#" class="btn btn-primary">Order</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </c:if>
-        </div>
+        </c:if>
+
+
+
+        <%--        </c:if>--%>
+
+        <%--        <c:if test="${status.last}">--%>
+        <%--            <div class="row">--%>
+        <%--                <div class="col-sm-1"></div>--%>
+        <%--                <div class="col-sm-5">--%>
+        <%--                    <div class="card">--%>
+        <%--                        <div class="card-body row">--%>
+        <%--                            <div class="col-sm-6 col-md-6 img-thumbnail my-1 mx-1">--%>
+        <%--                                <img src="1.jpg" alt="tv1" class="img-fluid">--%>
+        <%--                            </div>--%>
+        <%--                            <div class="col-sm-5 col-dm-5 my-1 mx-1">--%>
+        <%--                                <h5 class="card-title">${tvs[status.index].brand}</h5>--%>
+        <%--                                <h6 class="card-title">${tvs[status.index].model}</h6>--%>
+        <%--                                <p class="card-text">${tvs[status.index].brand}</p>--%>
+        <%--                                <a href="#" class="btn btn-primary">Order</a>--%>
+        <%--                            </div>--%>
+        <%--                        </div>--%>
+        <%--                    </div>--%>
+        <%--                </div>--%>
+        <%--            </div>--%>
+        <%--        </c:if>--%>
         <div class="b-example-divider"></div>
     </c:forEach>
 
