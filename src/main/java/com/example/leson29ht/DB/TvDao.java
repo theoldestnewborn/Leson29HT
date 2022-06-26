@@ -41,6 +41,11 @@ public class TvDao {
         return tvSetList;
     }
 
+    public int getAllPages (int tvsPerPage) {
+    return getAll().size()/tvsPerPage;
+    }
+
+
 
 
     public List<TVset> getPage (int page, int tvsPerPage) {

@@ -159,7 +159,7 @@
                     <c:choose>
                         <c:when test="${page eq i}">
                             <li class="page-item active"><a class="page-link"
-                                href="products?page=${i}"
+                                href="products?page=${i}">
                                     ${i} <span class="sr-only"></span></a>
                             </li>
                         </c:when>
