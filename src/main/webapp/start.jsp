@@ -46,8 +46,6 @@
     <form action="/products.jsp" method="post">
 
         <input type="hidden" name="page" value="1">
-        <input type="hidden" name="pageContext" value="1">
-
 
         <button type="submit" class="btn btn-primary">TVs</button>
         </div>
