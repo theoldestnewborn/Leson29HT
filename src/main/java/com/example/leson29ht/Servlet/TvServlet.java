@@ -69,7 +69,7 @@ public class TvServlet extends HttpServlet {
             getServletContext().getRequestDispatcher("/addTv.jsp").forward(req, resp);
         } else {
             tv.addOne(brand, model, info, price);
-            req.setAttribute("tv", new TvDao().getAll());
+            req.setAttribute("tvs", new TvDao().getAll());
             getServletContext().getRequestDispatcher("/products.jsp").forward(req, resp);
         }
 

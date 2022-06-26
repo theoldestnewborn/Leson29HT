@@ -62,6 +62,7 @@ public class TVset implements Serializable {
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", info='" + info + '\'' +
-                '}' + "\n";
+                ", pathImage='" + pathImage + '\'' +
+                '}';
     }
 }

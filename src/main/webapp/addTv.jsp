@@ -43,7 +43,7 @@
 
 <main class="container">
 
-    <form class="row g-3" action=<c:url value="/addTv"/> enctype="multipart/form-data" method="post" >
+    <form class="row g-3" action=<c:url value="/addTv"/> method="post" >
         <div class="col-md-2">
             <label for="inputBrand" class="form-label">Brand</label>
             <input type="text" name="brand" class="form-control" id="inputBrand">
