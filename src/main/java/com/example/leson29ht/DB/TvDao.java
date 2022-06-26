@@ -46,8 +46,6 @@ public class TvDao {
     }
 
 
-
-
     public List<TVset> getPage (int page, int tvsPerPage) {
         List<TVset> tvSetList = new ArrayList<>();
         int offset;
@@ -148,12 +146,4 @@ public class TvDao {
             throw new RuntimeException(e);
         }
     }
-
-//    public static void main(String[] args) {
-//        Repository rp = new Repository();
-//        rp.addOne("xiaomi", "zzz", "a nice tv set", 1000);
-//        System.out.println(rp.getAll());
-//        rp.removeOne("xiaomi", "zzz");
-//        System.out.println(rp.getAll());
-//    }
 }
