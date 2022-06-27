@@ -145,16 +145,24 @@
 
         <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center">
-                <c:if test="${page != 1}">
+
+                <c:if test="${pageAttribute == 1}">
+                    <li class="page-item disabled">
+                        <a class="page-link"
+                           href="">Prev</a>
+                    </li>
+                </c:if>
+                <c:if test="${pageAttribute > 1}">
                     <li class="page-item">
                         <a class="page-link"
-                            href="products?page=${page-1}">Previous</a>
+                            href="products?page=${pageAttribute-1}">Prev</a>
                     </li>
                 </c:if>
 
+
                 <c:forEach begin="1" end="3" var="i">
                     <c:choose>
-                        <c:when test="${page eq i}">
+                        <c:when test="${pageAttribute eq i}">
                             <li class="page-item active"><a class="page-link"
                                 href="products?page=${i}">
                                     ${i} <span class="sr-only"></span></a>
@@ -168,6 +176,20 @@
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
+
+                <c:if test="${pageAttribute < 3}">
+                    <li class="page-item">
+                        <a class="page-link"
+                           href="products?page=${pageAttribute+1}">Next</a>
+                    </li>
+                </c:if>
+
+                <c:if test="${pageAttribute == 3}">
+                    <li class="page-item disabled">
+                        <a class="page-link"
+                           href="">Next</a>
+                    </li>
+                </c:if>
             </ul>
         </nav>
 

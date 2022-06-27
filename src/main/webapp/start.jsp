@@ -40,7 +40,7 @@
 <div class="b-divider"></div>
 
 <main class="container text-center my-5">
-    <form action="/products.jsp" method="post">
+    <form action="/products">
 
         <input type="hidden" name="page" value="1">
 

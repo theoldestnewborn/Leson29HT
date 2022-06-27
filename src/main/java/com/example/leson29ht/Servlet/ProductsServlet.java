@@ -23,21 +23,8 @@ public class ProductsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         int page = Integer.parseInt(req.getParameter("page"));
-        if(page==1){
-            req.setAttribute("tvs", new TvDao().getPage(page,4));
-            req.getRequestDispatcher("/products.jsp").forward(req, resp);
-            getServletContext().setAttribute("pageContext", page);
-        }
-        else{
-            TvDao td = new TvDao();
-            req.setAttribute("tvs",
-                    td.getPage(page,4));
-            req.getRequestDispatcher("/products.jsp").forward(req, resp);
-        }
+        req.setAttribute("pageAttribute", page);
+        req.setAttribute("tvs", new TvDao().getPage(page, 4));
+        req.getRequestDispatcher("/products.jsp").forward(req, resp);
     }
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            doGet(req,resp);
-    }
-
 }
